@@ -16,7 +16,7 @@ public class GreetingController {
         @Autowired
         private MessasgeRepository messasgeRepository;
 
-        @GetMapping("/greeting")
+        @GetMapping("/")
         public String greeting() {
 
             return "greeting";
