@@ -1,4 +1,4 @@
-package com.example;
+package com.example.controller;
 
 import com.example.domain.Message;
 import com.example.repos.MessasgeRepository;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class GreetingController {
+public class MainController {
         @Autowired
         private MessasgeRepository messasgeRepository;
 
