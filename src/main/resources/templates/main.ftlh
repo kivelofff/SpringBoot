@@ -1,10 +1,7 @@
-<html>
-<body>
+<#import "parts/common.ftlh" as c>
+<@c.page>
 <div>
-    <form action="/logout" method="post">
-        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-        <input type="submit" value="Sign Out"/>
-    </form>
+
 </div>
 <div>
     <form method="post">
@@ -29,6 +26,4 @@
     <strong>{{authorName}}</strong>>
 </div>>
 {{/messages}}
-
-</body>
-</html>
+</@c.page>
