@@ -25,13 +25,13 @@
             <b>${message.id}</b>
             <span>${message.text}</span>
             <i>${message.tag}</i>
-            <strong>${message.authorName}</strong>>
+            <strong>${message.authorName}</strong>
             <div>
                 <#if message.filename??>
                     <img src="/img/${message.filename}">
                 </#if>
             </div>
-        </div>>
+        </div>
     <#else>
         No message
     </#list>
