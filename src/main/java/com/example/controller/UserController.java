@@ -50,4 +50,6 @@ public class UserController {
         userRepository.save(user);
         return "redirect:/user";
     }
+
+
 }
