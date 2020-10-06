@@ -78,6 +78,12 @@
             <artifactId>spring-boot-starter-mail</artifactId>
             <version>2.2.5.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+
+        </dependency>
 
     </dependencies>
 
@@ -87,6 +93,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
         </plugins>
     </build>
 </project>
