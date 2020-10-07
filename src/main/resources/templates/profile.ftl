@@ -6,12 +6,12 @@
     <form method="post">
 
 
-            <div class="form-group row">
-                <label class="col-sm-2 col-form-label"> E-mail:</label>
-                <div class="col-sm-10">
-                    <input type="email" name="email" placeholder="some@some.com" value="${email!''}"/>
-                </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"> E-mail:</label>
+            <div class="col-sm-10">
+                <input type="email" name="email" placeholder="some@some.com" value="${email!''}"/>
             </div>
+        </div>
 
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"> Password:</label>

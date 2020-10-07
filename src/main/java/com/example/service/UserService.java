@@ -76,4 +76,8 @@ public class UserService implements UserDetailsService {
         }
         userRepository.save(user);
     }
+
+    public void updateProfile(User user, String password, String email) {
+
+    }
 }
