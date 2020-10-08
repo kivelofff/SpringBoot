@@ -37,6 +37,12 @@ public class UserService implements UserDetailsService {
         }
         user.setActive(true);
         user.setRoles(Collections.singleton(Role.USER));
+        sendActivationCode(user);
+        userRepository.save(user);
+        return true;
+    }
+
+    private void sendActivationCode(User user) {
         user.setActivationCode(UUID.randomUUID().toString());
 
 
@@ -45,8 +51,6 @@ public class UserService implements UserDetailsService {
                     "Welcome to Sweater. Acrivate your account: http://localhost/activate/%s", user.getUsername(), user.getActivationCode());
             mailSender.send(user.getEmail(), "Activation Sweater account", message);
         }
-        userRepository.save(user);
-        return true;
     }
 
     public boolean activateUser(String code) {
@@ -78,6 +82,16 @@ public class UserService implements UserDetailsService {
     }
 
     public void updateProfile(User user, String password, String email) {
+        String userEmail = user.getEmail();
+        if (!StringUtils.isEmpty(email) && !email.equals(userEmail)) {
+            user.setEmail(email);
+            sendActivationCode(user);
+        }
 
+        if (StringUtils.isEmpty(password)) {
+            user.setPassword(password);
+        }
+
+        userRepository.save(user);
     }
 }
