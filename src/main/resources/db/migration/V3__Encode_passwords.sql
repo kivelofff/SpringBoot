@@ -1,1 +1,1 @@
-create extension if not exists 
+update usr set password = md5(password);

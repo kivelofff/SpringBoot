@@ -1,12 +1,18 @@
 package com.example.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotBlank(message = "text is empty!")
+    @Length(max = 2048, message = "message too long, <2KB")
     private String text;
     private String tag;
     @ManyToOne(fetch = FetchType.EAGER)
